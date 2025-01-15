@@ -1,0 +1,20 @@
+.sidebar{
+    margin: 20px;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    align-content: center;
+    justify-content: center;
+    padding-left: 10px;
+
+}
+.child{
+    display: none;
+    background-color: white;
+    border-radius: 10px;
+    align-content: center;
+
+}
+.sidebar:hover .child{
+    display: block
+}

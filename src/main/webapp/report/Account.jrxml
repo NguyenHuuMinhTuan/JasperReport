@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports
+                                  http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="accountReport"
+              pageWidth="595" pageHeight="842" columnWidth="555"
+              leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20"
+              uuid="ec4661cc-6d15-4c6c-abe3-f9c2f57d212d">
+
+
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+
+
+    <!-- Tham số báo cáo -->
+    <parameter name="id" class="java.lang.Integer"/>
+    <parameter name="username" class="java.lang.String"/>
+    <parameter name="password" class="java.lang.String"/>
+    <parameter name="email" class="java.lang.String"/>
+    <parameter name="type_account" class="java.lang.Boolean"/>
+    <field name="id" class="java.lang.Integer"/>
+    <field name="username" class="java.lang.String"/>
+    <field name="password" class="java.lang.String"/>
+    <field name="email" class="java.lang.String"/>
+    <field name="type_account" class="java.lang.Boolean"/>
+    <variable name="totalAccount" class="java.lang.Integer" calculation="Count">
+        <variableExpression><![CDATA[new Integer($F{id} != null ? $F{id} : 0)]]></variableExpression>
+        <initialValueExpression><![CDATA[0]]></initialValueExpression>
+    </variable>
+    <variable name="count" class="java.lang.Integer" calculation="System">
+        <variableExpression><![CDATA[$V{PAGE_NUMBER}]]></variableExpression>
+    </variable>
+    <variable name="totalPages" class="java.lang.Integer" calculation="System">
+        <variableExpression><![CDATA[$V{PAGE_NUMBER}]]></variableExpression>
+    </variable>
+
+
+    <!-- Background -->
+    <background>
+        <band splitType="Stretch">
+
+        </band>
+
+    </background>
+
+
+    <!-- Title -->
+    <title>
+        <band height="100" splitType="Stretch">
+            <image>
+                <reportElement x="20" y="10" width="60" height="60"/>
+                <imageExpression>
+                    <![CDATA["https://trianh.vn/wp-content/uploads/2023/05/logo-tri-anh-solution-1.png"]]></imageExpression>
+            </image>
+            <staticText>
+                <reportElement x="90" y="10" width="300" height="30"
+                               uuid="f3be2f9d-f349-4669-8bdb-2ed83fda627d">
+                    <property name="backcolor"
+                              value="($V{totalAccount} != null &amp;&amp; $V{totalAccount} > 5 ? '#0000FF' : '#FF0000')"/>
+
+                </reportElement>
+
+                <textElement>
+                    <font size="20" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Account Report]]></text>
+
+            </staticText>
+            <textField>
+                <reportElement x="370" y="10" width="150" height="30" uuid="f3be2f9d-f349-4669-8bdb-2ed83fda627d"/>
+                <textElement textAlignment="Right">
+                    <font size="12"/>
+                </textElement>
+                <textFieldExpression>
+                    <![CDATA[new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new java.util.Date())]]></textFieldExpression>
+            </textField>
+
+        </band>
+    </title>
+
+    <!-- Page Header -->
+
+
+    <!-- Header của bảng -->
+    <columnHeader>
+
+        <band height="30" splitType="Stretch">
+            <staticText>
+                <reportElement x="0" y="0" width="30" height="30" backcolor="#E4E4E4" mode="Opaque"
+                               uuid="dfd7fd9c-1ecf-4a9b-9e76-34dff7b104a1"/>
+
+                <textElement textAlignment="Center">
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[ID]]></text>
+            </staticText>
+
+            <staticText>
+                <reportElement x="30" y="0" width="200" height="30" backcolor="#E4E4E4" mode="Opaque"
+                               uuid="47d06b2b-2f96-4de3-bdb8-12c1c01d8b0c"/>
+                <textElement textAlignment="Center">
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Username]]></text>
+            </staticText>
+
+            <staticText>
+                <reportElement x="230" y="0" width="70" height="30" backcolor="#E4E4E4" mode="Opaque"
+                               uuid="5e35c222-6740-4fd2-8e8b-6d51b92558c6"/>
+                <textElement textAlignment="Center">
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Password]]></text>
+            </staticText>
+
+            <staticText>
+                <reportElement x="300" y="0" width="150" height="30" backcolor="#E4E4E4" mode="Opaque"
+                               uuid="79870e49-6c19-4f5f-8a44-826c5ae364a4"/>
+                <textElement textAlignment="Center">
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Email]]></text>
+            </staticText>
+
+            <staticText>
+
+                <reportElement x="450" y="0" width="100" height="30" backcolor="#E4E4E4" mode="Opaque"
+                               uuid="b2f48b1b-759e-4fd2-841e-85f482c024c2"/>
+
+                <textElement textAlignment="Center">
+
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Type]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+
+
+    <!-- Detail Band -->
+    <detail>
+        <band height="30" splitType="Stretch">
+            <textField>
+                <reportElement x="0" y="0" width="30" height="30" uuid="9f9fa053-3b2d-416a-b536-cf6fe93f980d"/>
+                <box>
+                    <pen lineWidth="1.0" lineColor="#000000"/>
+                </box>
+                <textElement textAlignment="Center">
+                    <font fontName="Times New Roman" size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+            </textField>
+
+            <textField>
+                <reportElement x="30" y="0" width="200" height="30" uuid="6503be1a-dbb4-4e6e-8614-7f93a939b3a4"/>
+                <box>
+                    <pen lineWidth="1.0" lineColor="#000000"/>
+                </box>
+                <textElement>
+                    <font fontName="Times New Roman" size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[" " +$F{username}]]></textFieldExpression>
+            </textField>
+
+            <textField>
+                <reportElement x="230" y="0" width="70" height="30" uuid="b9c8c595-5c77-416b-bc70-9bc4eb21b9e7"/>
+                <box>
+                    <pen lineWidth="1.0" lineColor="#000000"/>
+                </box>
+                <textElement textAlignment="Center">
+                    <font fontName="Times New Roman" size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{password}.length()]]></textFieldExpression>
+            </textField>
+
+            <textField>
+                <reportElement x="300" y="0" width="150" height="30" uuid="064b2b07-7f59-46cf-a5b0-fb5301d02d70"/>
+                <box>
+                    <pen lineWidth="1.0" lineColor="#000000"/>
+                </box>
+                <textElement textAlignment="Center">
+                    <font fontName="Times New Roman" size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+            </textField>
+
+            <textField>
+                <reportElement x="450" y="0" width="100" height="30" uuid="a3c9f7a3-7be6-4088-82c3-6825ff73649e"/>
+                <box>
+                    <pen lineWidth="1.0" lineColor="#000000"/>
+                </box>
+                <textElement textAlignment="Center">
+                    <font fontName="Times New Roman" size="12"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{type_account}]]></textFieldExpression>
+            </textField>
+        </band>
+
+    </detail>
+    <columnFooter>
+        <band height="60" splitType="Stretch">
+            <staticText>
+                <reportElement x="0" y="0" width="100" height="30"/>
+                <textElement textAlignment="Center">
+                    <font fontName="Times New Roman" size="12"/>
+
+                </textElement>
+                <text><![CDATA[Total Account]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="110" y="0" width="100" height="30"/>
+                <textFieldExpression><![CDATA[$V{totalAccount}]]></textFieldExpression>
+            </textField>
+        </band>
+    </columnFooter>
+
+
+    <pageFooter>
+        <band height="30" splitType="Stretch">
+
+            <textField>
+                <reportElement x="60" y="0" width="400" height="30"/>
+
+                <textElement textAlignment="Center">
+                    <font size="12" fontName="Arial"/>
+
+                </textElement>
+
+                <textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+
+            </textField>
+        </band>
+    </pageFooter>
+    <summary>
+        <band height="100" splitType="Immediate">
+            <textField>
+                <reportElement x="50" y="15" width="250" height="50" />
+                <textElement>
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Confirm of Director"+ "\n" + "   (Signature)"]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="350" y="15" width="300" height="50"/>
+                <textElement>
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Confirm of Mentor" + "\n" + "   (Signature)"]]></textFieldExpression>
+            </textField>
+        </band>
+    </summary>
+</jasperReport>
+
