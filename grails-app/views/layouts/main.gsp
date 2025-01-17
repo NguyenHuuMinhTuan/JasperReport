@@ -1,52 +1,36 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title>
-        <g:layoutTitle default="Intern Management"/>
-    </title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <asset:link rel="icon" href="favicon.ico" type="image/x-ico"/>
-
-    <asset:stylesheet src="application.css"/>
-
-    <g:layoutHead/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trang chủ</title>
 </head>
 
 <body>
-
-<nav class="navbar navbar-expand-lg navbar-dark navbar-static-top" role="navigation">
-    <a class="navbar logo" href="/">Intern Mãi đĩnh</a>
-
-</nav>
-
-<div class="container-fluid">
-    <div class="row-fluid d-lg-flex">
-        <div class="col-sm-3 bg-dark mr-lg-1" style="color:white ">
-            <div>
-                <img class="logo" src="https://reviewcty.net/Content/images/companies/tri-anh-solution-logo.png" alt="Logo">
-                <ul class="sidebar">Account Management
-
-                    <g:link controller="account" action="create">
-                        <li class="child">Add Account</li>
-                    </g:link>
+<header>
+    <nav class="nav navbar">
+       <g:render template="dashboard/header"/>
+    </nav>
+</header>
 
 
-                </ul>
-                <ul class="sidebar">Product Manager</ul>
-                <ul class="sidebar">Category Manager</ul>
-            </div>
-
+<div>
+    <div class="row">
+        <div class="col-3">
+            <g:render template="dashboard/sideBar"/>
         </div>
-        <main role="main" class="col-sm-9 " style="color: black">
+        <main role="main" class="col-9">
             <g:layoutBody/>
         </main>
+
     </div>
 
+
 </div>
-
-<asset:javascript src="application.js"/>
-
+<footer>
+    <g:render template="dashboard/footer"/>
+</footer>
 </body>
 </html>

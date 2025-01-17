@@ -14,5 +14,7 @@ class UrlMappings {
         "404"(view:'/notFound')
         "/report"(controller: "product", action: "index")
         "/reportAccount"(controller: "account", action: "print")
+        "/login"(controller: "authentication", action: "login")
+        ""
     }
 }

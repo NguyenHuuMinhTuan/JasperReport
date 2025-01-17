@@ -11,6 +11,7 @@
 *= require account
 *= require font-awesome/css/all.css
 *= require grails
+*= require sidebar
 *= require main
 *= require mobile
 *= require_self

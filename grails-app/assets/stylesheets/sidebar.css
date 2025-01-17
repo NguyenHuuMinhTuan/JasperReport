@@ -1,0 +1,10 @@
+.li-hv:hover{
+    height: fit-content;
+    width: fit-content;
+    text-align: center;
+    justify-content: center;
+    background-color: orange;
+    border-radius: 10px;
+    color: white;
+
+}
