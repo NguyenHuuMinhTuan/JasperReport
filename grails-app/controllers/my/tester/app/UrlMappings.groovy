@@ -15,6 +15,6 @@ class UrlMappings {
         "/report"(controller: "product", action: "index")
         "/reportAccount"(controller: "account", action: "print")
         "/login"(controller: "authentication", action: "login")
-        ""
+        "/registration"(controller: "account", action: "create")
     }
 }

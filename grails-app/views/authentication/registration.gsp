@@ -7,7 +7,7 @@
  <div class="container-fluid">
     <div class="row">
      <div class="col">
-      <p>Đay là register</p>
+    <p>Day la trang dang ky</p>
      </div>
      <div class="col"></div>
 

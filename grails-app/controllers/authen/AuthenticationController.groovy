@@ -16,7 +16,7 @@ class AuthenticationController {
     }
 
     def registration() {
-
+        redirect(controller: "authentication", action: "registration")
     }
 
     def doLogin() {

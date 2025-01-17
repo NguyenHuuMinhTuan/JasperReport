@@ -15,7 +15,7 @@
 
             <!-- Form đăng nhập sẽ chiếm 100% chiều rộng trên các thiết bị nhỏ -->
             <div class="col-lg-6 col-md-6 col-sm-12 mt-5">
-                <g:form controller="authentication" action="login" class="form-control border-0"
+                <g:form controller="authentication" action="doLogin" class="form-control border-0"
                         style="max-width: 400px; margin: auto;">
                     <h3 class="text-center mb-4"><b>Đăng Nhập</b></h3>
 
@@ -36,7 +36,8 @@
                         <g:submitButton class="btn btn-success btn-block" name="login" value="Đăng nhập"
                                         style="padding: 10px; font-size: 16px;"/>
                         <g:submitButton class="btn btn-warning btn-block" name="registration" value="Đăng ký"
-                                        style="padding: 10px; font-size: 16px;"/>
+                                        style="padding: 10px; font-size: 16px;"
+                                        onclick="window.location.href = '${createLink(controller: 'authentication', action: 'registration')}'" />
                     </div>
 
                     <!-- Forgot password link -->
