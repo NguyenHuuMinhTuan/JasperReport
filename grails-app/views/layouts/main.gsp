@@ -8,35 +8,34 @@
     <title>Trang chủ</title>
 </head>
 
-
 <header>
-    <nav class="nav navbar">
-%{--       <g:render template="dashboard/header"/>--}%
-        <p>header</p>
+    <nav class="nav navbar navbar-expand navbar-brand col-12 bg-secondary">
+        <g:render template="/dashboard/header"/>
     </nav>
 </header>
 
 <body>
 
-<div>
+<div class="container-fluid">
+    <!-- First row: Sidebar -->
     <div class="row">
         <div class="col-3">
-%{--            <g:render template="dashboard/sideBar"/>--}%
-            <p>sidebar</p>
+            <g:render template="/dashboard/sideBar"/>
         </div>
-        <main role="main" class="col-9">
-            <g:layoutBody/>
-        </main>
 
+        <div class="col-9">
+            <g:render template="/dashboard/main"/>
+        </div>
     </div>
 
+    <!-- Second row: Main content -->
 
 </div>
 
 </body>
+
 <footer>
-%{--        <g:render template="dashboard/footer"/>--}%
-    <p>footer</p>
+    <g:render template="/dashboard/footer"/>
 </footer>
 
 </html>

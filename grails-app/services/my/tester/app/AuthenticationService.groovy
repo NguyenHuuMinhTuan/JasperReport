@@ -10,7 +10,7 @@ class AuthenticationService {
 
     def setMemberAuthorization(Account account) {
         def authorization = [isLoggedIn: true, account: account]
-        AppUtil.getSesstion()[AUTHORIZED] = authorization
+        AppUtil.getSession()[AUTHORIZED] = authorization
     }
 
     def doLogin(String username, String password){
