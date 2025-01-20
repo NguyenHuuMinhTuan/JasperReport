@@ -10,8 +10,8 @@
 *= require bootstrap
 *= require account
 *= require font-awesome/css/all.css
-*= require grails
 *= require sidebar
+*= require node_modules/boxicons/css/boxicons.min.css
 *= require main
 *= require mobile
 *= require_self

@@ -17,7 +17,6 @@
 <body>
 
 <div class="container-fluid">
-    <!-- First row: Sidebar -->
     <div class="row">
         <div class="col-3">
             <g:render template="/dashboard/sideBar"/>
@@ -27,8 +26,6 @@
             <g:render template="/dashboard/main"/>
         </div>
     </div>
-
-    <!-- Second row: Main content -->
 
 </div>
 
