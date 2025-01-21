@@ -1,7 +1,6 @@
 
-
-    <div class=" bg-dark " style="color: whitesmoke; border-radius: 10px; border: white solid 1px">
-        <div class="card-header d-block"style="text-align: center">
+    <div class=" bg-dark " style="color: black; border-radius: 10px; border: white solid 1px">
+        <div class="card-header d-block bg-white"style="text-align: center">
             <img src="https://th.bing.com/th/id/OIP.zK3-hNtHS9tYi2ykKyKEtwHaHx?rs=1&pid=ImgDetMain" alt="logo" width="50px">
             <h1>Mylove</h1>
             <p>Chào mừng bạn quay chở lại</p>

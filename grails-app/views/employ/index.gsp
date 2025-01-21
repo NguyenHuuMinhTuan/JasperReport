@@ -1,9 +1,5 @@
 <meta name="layout" content="main"/>
-<style>
-.items {
-    margin-right: 5px;
-}
-</style>
+
 
 <div class="container-fluid">
     <div class="card">
@@ -19,8 +15,22 @@
 
         <div class="card-body">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="table-responsive">
+                <div class="col-12" style="margin-left: 0;margin-right: 0">
+                    <div class=" col-12 d-flex" >
+
+                        <select class="form-control col-3" name="option" id="name">
+                            <option value="name">50</option>
+                            <option value="name">100</option>
+                            <option value="name">200</option>
+                        </select>
+
+                        <div class="col-5 d-flex" style="margin-left: auto">
+                            <input class="form-control" type="text" placeholder="tìm kiếm">
+                            <button class="btn btn-warning">Search</button>
+                        </div>
+
+                    </div>
+                    <div class="table-responsive mt-2">
                         <table class="table-bordered table">
                             <thead>
                             <tr>

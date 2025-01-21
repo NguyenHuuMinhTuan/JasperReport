@@ -1,15 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <asset:stylesheet src="application.css"/>
-    <title>Document</title>
-</head>
 
-<body>
 <div class="container-fluid bg-dark" style="color: white">
     <div class="row-fluid d-flex">
         <div class="col-4" style="border-right: white solid 1px">
@@ -39,6 +28,3 @@
         </div>
     </div>
 </div>
-
-</body>
-</html>
