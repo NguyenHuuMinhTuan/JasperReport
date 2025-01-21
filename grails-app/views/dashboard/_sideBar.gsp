@@ -6,7 +6,7 @@
             <p>Chào mừng bạn quay chở lại</p>
         </div>
         <ul class="list-group" style="list-style: none">
-            <g:link controller="account" action="index">
+            <g:link controller="prod" action="index">
                 <li class="menu-item" style="font-size: 15px; margin: 20px">
                     <i class="fas fa-bell"></i>
                     POS Bán Hàng</li>
