@@ -1,20 +1,17 @@
 <meta name="layout" content="main"/>
 
 <style>
-
-@import url('https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-@import url(https://fonts.googleapis.com/css?family=Lato:300,400,400i,700);
-@import url(https://fonts.googleapis.com/css?family=Niconne);
-@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap');
-
 .card {
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-family: 'Sarabun', sans-serif;
+}
+
+.no-padding {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .card-header {
@@ -26,24 +23,36 @@
     border-bottom: 1px solid #ddd;
 }
 
-.card-body {
-    padding: 20px;
-}
-
 .items {
     display: flex;
-    margin: 10px;
     padding: 10px;
     border: 1px solid #ddd;
     text-align: left;
     border-radius: 5px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
 
 }
 
-.tile {
-    margin-top: 20px;
+
+.info p {
+    font-size: 12px;
+
+
 }
+
+.info h4 {
+    font-size: 15px;
+}
+
+.info {
+    margin-left: 10px;
+}
+
+.title {
+    border-bottom: yellow 2px solid;
+}
+
 </style>
 
 <div class="card">
@@ -53,58 +62,72 @@
         <div class="ml-auto " id="clock"></div>
     </div>
 
-    <div class="card-body">
-        <div class="row">
-            <div class="col-md-12 col-lg-6" >
+    <div class="card-body" style="padding-left: 0; padding-right: 0">
+        <div class="row ">
+            <div class="col-md-12 col-lg-6" style="padding-right: 0; padding-left: 0">
                 <div class="row">
-                    <div class="col-md-6 items">
-                        <i class='bx bx-shopping-bag'></i>
+                    <div class="col-md-6 gx-3  items">
+                        <i class='icon bx bxs-user-account fa-4x bg-danger'></i>
 
                         <div class="info">
-                            <h4 style="color: red">TỔNG KHÁCH HÀNG</h4>
+                            <h4 style="color: orangered">TỔNG KHÁCH HÀNG</h4>
+
                             <p style="border-bottom: black dashed 1px">54 khách hàng</p>
+
                             <p>Tổng số khách hàng trong năm</p>
                         </div>
 
                     </div>
 
-                    <div class="col-md-6 items"><i class='fa fa-eye'></i>
+                    <div class="col-md-6 gx-3 items">
+                        <i class='bx bx-tachometer fa-4x bg-success'></i>
 
                         <div class="info">
-                            <h4 style="color: green">TỔNG SỐ SẢN PHẨM</h4>
+                            <h4 style="color: #1c7430">TỔNG SỐ SẢN PHẨM</h4>
 
                             <p style="border-bottom: black dashed 1px">
                                 145 đơn trong tháng này</p>
+
                             <p>Tổng số đơn hàng trong năm</p>
                         </div>
 
                     </div>
 
-                    <div class="col-md-12 items"><i class='fa fa-user'></i>
+
+                    <div class="col-md-6 gx-3 items">
+                        <i class='icon bx bx-id-card fa-4x bg-warning'></i>
 
                         <div class="info">
-                            <h4>Tổng sô lượng khách hàng</h4>
+                            <h4 style="color: orangered">QUẢN LÝ NHÂN VIÊN</h4>
 
-                            <p>54 khách hàng</p>
+                            <p style="border-bottom: black dashed 1px">546 nhân viên</p>
+
+                            <p>Tổng số nhân viên trong năm</p>
                         </div>
 
                     </div>
 
-                    <div class="col-md-12 items"><i class='app-menu__icon bx bx-cart-alt'></i>
+
+                    <div class="col-md-6 gx-3 items">
+                        <i class='icon bx bxs-alarm fa-4x bg-primary'></i>
 
                         <div class="info">
-                            <h4>Tổng sô lượng khách hàng</h4>
+                            <h4 style="color: #b1dfbb">TỔNG THU CHI</h4>
 
-                            <p>54 khách hàng</p>
+                            <p style="border-bottom: black dashed 1px">123 lần thu chi</p>
+
+                            <p>Tổng số lần thu trong năm</p>
                         </div>
 
                     </div>
 
-                    <div class="col-md-12 m-2" style="border-radius: 20px;background-color: #D3D3D3;box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-                    ">
-                            <span class="tile" style="border-bottom: yellow solid 1px">
-                                <h3>Thống kê nhân sự</h3>
-                            </span>
+
+                    <div class="col-md-12 mt-2"
+                         style="border-radius: 10px;box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+                         ">
+                        <span class="title">
+                            <h3>Thống kê nhân sự</h3>
+                        </span>
                         <table class="table table-bordered">
                             <thead>
                             <tr>

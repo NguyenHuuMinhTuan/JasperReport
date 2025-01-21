@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Trang chủ</title>
 </head>
 
@@ -16,13 +18,13 @@
 
 <body>
 
-<div class="container-fluid">
+<div class="container-fluid" style="padding-left: 0;padding-right: 0">
     <div class="row">
-        <div class="col-3">
+        <div class="col-2" style="padding-left: 0;padding-right: 0">
             <g:render template="/dashboard/sideBar"/>
         </div>
 
-        <div class="col-9">
+        <div class="col-10">
             <g:render template="/dashboard/main"/>
         </div>
     </div>
