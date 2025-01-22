@@ -62,7 +62,7 @@
     <div class="user-menu">
         <div class="user-name">MY HOME</div>
         <div class="log-out">
-            <a href="/logout">Đăng xuất</a>
+            <g:link controller="authentication" action="logout">Đăng xuất</g:link>
         </div>
     </div>
 

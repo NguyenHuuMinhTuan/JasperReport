@@ -35,9 +35,9 @@
                     <div class="d-grid gap-2 mb-3">
                         <g:submitButton class="btn btn-success btn-block" name="login" value="Đăng nhập"
                                         style="padding: 10px; font-size: 16px;"/>
-                        <g:submitButton class="btn btn-warning btn-block" name="registration" value="Đăng ký"
-                                        style="padding: 10px; font-size: 16px;"
-                                        onclick="window.location.href = '${createLink(controller: 'authentication', action: 'registration')}'" />
+                        <g:link controller="authentication" action="registration">
+                            <p>Bạn chưa có tài khoản ?</p>
+                        </g:link>
                     </div>
 
                     <!-- Forgot password link -->

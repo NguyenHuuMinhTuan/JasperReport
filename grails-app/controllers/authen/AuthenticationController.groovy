@@ -7,24 +7,20 @@ class AuthenticationController {
     AuthenticationService authenticationService
 
     def login() {
-//
-//        log.info("Đã gọi tới login")
-//        render(view: "login")
-   if (authenticationService.isAuthenticated()) {
+        if (authenticationService.isAuthenticated()) {
             redirect(controller: "account", action: "index")
-       }
+        }
     }
 
     def registration() {
-        redirect(controller: "authentication", action: "registration")
     }
 
     def doLogin() {
         if (authenticationService.doLogin(params.username, params.password)) {
             redirect(controller: "account", action: "index")
         } else {
-            flash.message ="Username and Password unavailable";
-            render(view:"login")
+            flash.message = "Username and Password unavailable";
+            render(view: "login")
         }
 
     }
