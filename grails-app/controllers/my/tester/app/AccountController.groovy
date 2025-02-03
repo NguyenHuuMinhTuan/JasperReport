@@ -141,5 +141,8 @@ class AccountController {
 
 
     }
+    def linkCreate(){
+        redirect(controller: "account" ,action: "create")
+    }
 
 }

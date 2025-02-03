@@ -1,4 +1,10 @@
+<header>
+    <asset:stylesheet src="application.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</header>
 <style>
+
 
 /* Container chính */
 .user-menu {
@@ -59,11 +65,56 @@
         <p style="color: white">TRI ANH INTERN</p>
     </a>
 
-    <div class="user-menu">
-        <div class="user-name">MY HOME</div>
-        <div class="log-out">
-            <g:link controller="authentication" action="logout">Đăng xuất</g:link>
+
+    <g:if test="${session.username}">
+        <div class="user-menu">
+            <div class="user-name">Xin chào ,
+                <strong> ${session.username}</strong>
+               </div>
+            <div class="log-out">
+                <button class="btn btn-warning" id="btn-logOut">Đăng xuất </button>
+
+            </div>
         </div>
-    </div>
+    </g:if>
+    <g:else>
+        <div>
+            <button class="btn btn-success">Đăng nhập</button>
+        </div>
+    </g:else>
+
 
 </div>
+<script>
+    document.getElementById("btn-logOut").addEventListener("click", function (event) {
+        event.preventDefault(); // Ngăn chặn hành động mặc định
+
+        // Hiển thị hộp thoại xác nhận bằng SweetAlert2
+        Swal.fire({
+            title: "Bạn có chắc muốn đăng xuất?",
+            text: "Bạn sẽ phải đăng nhập lại để sử dụng hệ thống!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33", // Màu nút xác nhận
+            cancelButtonColor: "#3085d6", // Màu nút hủy
+            confirmButtonText: "Đăng xuất",
+            cancelButtonText: "Hủy"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Người dùng xác nhận đăng xuất, chuyển hướng tới action logout
+                window.location.href = "${createLink(controller: 'authentication', action: 'logout')}";
+            } else if (result.dismiss === Swal.DismissReason.cancel) {
+                // Người dùng hủy bỏ đăng xuất
+                Swal.fire({
+                    title: "Đã hủy lệnh đăng xuất",
+                    text: "Bạn vẫn đang duy trì đăng nhập!",
+                    icon: "info",
+                    timer: 3000, // Đếm ngược 3 giây
+                    timerProgressBar: true, // Hiển thị thanh tiến trình
+                    showConfirmButton: false
+                });
+            }
+        });
+    });
+</script>
+

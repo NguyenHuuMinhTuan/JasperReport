@@ -1,8 +1,11 @@
 <meta name="layout" content="main"/>
 
 <div class="card">
-    <div class="card-header">
+    <div class="card-header d-flex">
         <p>Trang quản lý tài khoản</p>
+        <g:link action="create" controller="account" class="ml-auto">
+            <button onclick="linkCreate" class="btn btn-success ml-auto">Add Account</button>
+        </g:link>
 
     </div>
 

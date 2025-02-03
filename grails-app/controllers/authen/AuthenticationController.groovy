@@ -17,9 +17,10 @@ class AuthenticationController {
 
     def doLogin() {
         if (authenticationService.doLogin(params.username, params.password)) {
+            session.username = params.username;
             redirect(controller: "account", action: "index")
         } else {
-            flash.message = "Username and Password unavailable";
+            flash.error = "Username and Password unavailable";
             render(view: "login")
         }
 

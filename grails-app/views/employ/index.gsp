@@ -4,7 +4,8 @@
 <div class="container-fluid">
     <div class="card">
         <div class="card-header">
-            <button class="btn btn-success "><i class="icon bx bx-plus"></i>Tạo nhân viên mới</button>
+
+            <button class="btn btn-success " onclick="scrollHere(form_add)"><i class="icon bx bx-plus"></i>Tạo nhân viên mới</button>
             <button class="btn btn-warning "><i class="fa fa-file-upload"></i>Tải file</button>
             <button class="btn btn-primary "><i class="fa fa-print"></i>In dữ liệu</button>
             <button class="btn btn-primary "><i class="fa fa-copy">Sao chép</i></button>
@@ -74,7 +75,24 @@
 
         </div>
 
-        <div class="card-footer"></div>
+        <div class="card-footer" id="form_add">
+            <h1>Thêm nhân viên mới</h1>
+            <g:render template="form"/>
+        </div>
     </div>
 
 </div>
+<script>
+    function scrollHere(sectionId) {
+        const form = document.getElementById("form_add")
+        if(form){
+            form.scrollIntoView({
+                behavior:"smooth",
+                block:"start"
+                }
+
+            )
+        }
+
+    }
+</script>

@@ -1,0 +1,12 @@
+dataSource:
+  driverClassName: org.mariadb.jdbc.Driver
+  dbCreate: update
+  username: tuan
+  password: Tuan#P413
+
+environments:
+  development:
+    dataSource:
+      dbCreate: update
+      url: "jdbc:mariadb://dev.talking.vn:53306/tuan_db"
+
