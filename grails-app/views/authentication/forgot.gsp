@@ -11,6 +11,14 @@
         background-color: #f8f9fa;
     }
 
+<<<<<<< HEAD
+=======
+    .bg-primary {
+        background-color: #007bff !important;
+        color: #fff;
+    }
+
+>>>>>>> 1a8b7c4a0b96b8cc8bb37e0b36fa92e4b32c269e
     .forgot-password-section {
         min-height: 100vh;
         display: flex;

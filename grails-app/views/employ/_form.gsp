@@ -19,6 +19,7 @@
                     </div>
                 </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="uploadImages">Tải ảnh lên</label>
@@ -38,6 +39,8 @@
                         </select>
                     </div>
                 </div>
+=======
+>>>>>>> 1a8b7c4a0b96b8cc8bb37e0b36fa92e4b32c269e
 =======
 >>>>>>> 1a8b7c4a0b96b8cc8bb37e0b36fa92e4b32c269e
 

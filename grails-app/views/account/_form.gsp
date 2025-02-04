@@ -1,7 +1,11 @@
+<header>
+    <asset:stylesheet src="application.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</header>
 <div class="container-fluid d-lg-block">
 
     <div class="form-group">
-        %{--    <label for="username" class="label">Username</label>--}%
         <g:message message="Username"/>
         <g:textField name="username" class="form-control" value="${account?.username}" placeholder="Username"/>
     </div>
@@ -41,6 +45,14 @@
             alert("Password and Confirm Password do not match!");
             return false; // Ngăn không cho gửi form
         }
+        Swal.fire({
+            title: "Thêm tài khoản thành công!",
+            text: "Tạo thành công",
+            icon: "success",
+            timer: 2000, // Đếm ngược 5 giây
+            timerProgressBar: true, // Hiển thị thanh tiến trình
+            showConfirmButton: false
+        });
         return true;
     }
 </script>

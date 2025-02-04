@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1a8b7c4a0b96b8cc8bb37e0b36fa92e4b32c269e
 <!doctype html>
 <html lang="en">
 <head>
@@ -21,7 +24,11 @@
         <!-- Cột chứa form -->
         <div class="col-md-6">
             <h2 class="text-center mb-4">Đăng ký tài khoản</h2>
+<<<<<<< HEAD
             <g:form controller="authentication" action="save">
+=======
+            <g:form controller="authentication">
+>>>>>>> 1a8b7c4a0b96b8cc8bb37e0b36fa92e4b32c269e
                 <div class="mb-3">
                     <g:textField name="username" placeholder="Tên tài khoản" class="form-control"/>
                 </div>
@@ -34,9 +41,12 @@
                 <div class="mb-3">
                     <g:textField name="email" placeholder="Email" class="form-control"/>
                 </div>
+<<<<<<< HEAD
                 <div class="mb-3">
                     <g:textField name="type_account" placeholder="Loại tài khoản" value="false" readonly="true" class="form-control"/>
                 </div>
+=======
+>>>>>>> 1a8b7c4a0b96b8cc8bb37e0b36fa92e4b32c269e
                 <div class="d-grid gap-2">
                     <g:submitButton name="register" value="Đăng ký" class="btn btn-primary"/>
                 </div>
@@ -47,6 +57,7 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -124,6 +135,9 @@
         });
     });
 </script>
+=======
+>>>>>>> 1a8b7c4a0b96b8cc8bb37e0b36fa92e4b32c269e
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
