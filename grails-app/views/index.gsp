@@ -324,7 +324,7 @@
             labels: ["Jan", "Feb", "Mar", "Apr", "Mat", "Jun"],
             datasets: [{
                 label: "Số lượng đầu vào",
-                data: [90, 75, 50, 80, 60, 70],
+                data: [90, 75, 100, 80, 60, 70],
                 borderColor: "blue",
                 backgroundColor: "rgba(0, 0, 255, 0.1)",
                 fill: true
