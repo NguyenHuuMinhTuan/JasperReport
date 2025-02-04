@@ -1,8 +1,17 @@
 <meta name="layout" content="main"/>
 
 <div class="card">
-    <div class="card-header">
+    <div class="card-header d-flex">
+        <a href="${createLink(controller: 'account', action: 'exportUsers')}" class="btn btn-success">
+            Xuất Excel
+        </a>
         <p>Trang quản lý tài khoản</p>
+        <a href="${createLink(controller: 'excelExport', action: 'exportUsers')}" class="btn btn-success">
+            Xuất Excel
+        </a>
+        <g:link action="create" controller="account" class="ml-auto">
+            <button class="btn btn-success ml-auto">Add Account</button>
+        </g:link>
 
     </div>
 
@@ -54,8 +63,9 @@
             <g:message message="Print report"/>
         </g:link>
 
-        <div class="paginate">
-            <g:paginate total="${total ?: 0}"/>
+        <div class="paginate" style="margin-top: 40px">
+            <g:paginate class="pagination" total="${total ?: 0}"/>
         </div>
     </div>
+
 </div>

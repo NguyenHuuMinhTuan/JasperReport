@@ -1,5 +1,7 @@
 <header>
     <asset:stylesheet src="application.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </header>
 
 <div class="container-fluid bg-secondary card-body" style="overflow: auto;height: auto;min-height: 100vh">
@@ -18,7 +20,6 @@
                 <g:form controller="authentication" action="doLogin" class="form-control border-0"
                         style="max-width: 400px; margin: auto;">
                     <h3 class="text-center mb-4"><b>Đăng Nhập</b></h3>
-
                     <!-- Input for Username -->
                     <div class="form-group mb-3">
                         <g:textField name="username" class="form-control" placeholder="Tên đăng nhập"
@@ -35,9 +36,9 @@
                     <div class="d-grid gap-2 mb-3">
                         <g:submitButton class="btn btn-success btn-block" name="login" value="Đăng nhập"
                                         style="padding: 10px; font-size: 16px;"/>
-                        <g:submitButton class="btn btn-warning btn-block" name="registration" value="Đăng ký"
-                                        style="padding: 10px; font-size: 16px;"
-                                        onclick="window.location.href = '${createLink(controller: 'authentication', action: 'registration')}'" />
+                        <g:link controller="authentication" action="registration">
+                            <p>Bạn chưa có tài khoản ?</p>
+                        </g:link>
                     </div>
 
                     <!-- Forgot password link -->
@@ -64,3 +65,16 @@
         </p>
     </div>
 </div>
+<script>
+    // Kiểm tra nếu có flash.error
+    <g:if test="${flash.error}">
+    Swal.fire({
+        title: "Đăng nhập không thành công!",
+        text: "${flash.error}",
+        icon: "error",
+        timer: 5000, // Đếm ngược 5 giây
+        timerProgressBar: true, // Hiển thị thanh tiến trình
+        showConfirmButton: false
+    });
+    </g:if>
+</script>

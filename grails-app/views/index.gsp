@@ -29,7 +29,6 @@
     border: 1px solid #ddd;
     text-align: left;
     border-radius: 5px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     overflow: hidden;
 
 }
@@ -67,7 +66,7 @@
             <div class="col-md-12 col-lg-6" style="padding-right: 0; padding-left: 0">
                 <div class="row">
                     <div class="col-md-6 gx-3  items">
-                        <i class='icon bx bxs-user-account fa-4x bg-danger'></i>
+                        <i class='icon bx bxs-user-account fa-4x bg-danger' style="border-radius: 10px"></i>
 
                         <div class="info">
                             <h4 style="color: orangered">TỔNG KHÁCH HÀNG</h4>
@@ -80,7 +79,7 @@
                     </div>
 
                     <div class="col-md-6 gx-3 items">
-                        <i class='bx bx-tachometer fa-4x bg-success'></i>
+                        <i class='bx bx-tachometer fa-4x bg-success'style="border-radius: 10px"></i>
 
                         <div class="info">
                             <h4 style="color: #1c7430">TỔNG SỐ SẢN PHẨM</h4>
@@ -95,7 +94,7 @@
 
 
                     <div class="col-md-6 gx-3 items">
-                        <i class='icon bx bx-id-card fa-4x bg-warning'></i>
+                        <i class='icon bx bx-id-card fa-4x bg-warning'style="border-radius: 10px"></i>
 
                         <div class="info">
                             <h4 style="color: orangered">QUẢN LÝ NHÂN VIÊN</h4>
@@ -109,7 +108,7 @@
 
 
                     <div class="col-md-6 gx-3 items">
-                        <i class='icon bx bxs-alarm fa-4x bg-primary'></i>
+                        <i class='icon bx bxs-alarm fa-4x bg-primary'style="border-radius: 10px"></i>
 
                         <div class="info">
                             <h4 style="color: #b1dfbb">TỔNG THU CHI</h4>
@@ -202,6 +201,17 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-md-12" style="box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+                    ">
+                        <div class="tile">
+                            <h3 class="tile-title">Thống kê 6 tháng doanh thu</h3>
+
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <canvas class="embed-responsive-item" id="pieChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -254,6 +264,58 @@
     }
 
     time()
+    var pieChar = document.getElementById("pieChart").getContext("2d");
+
+    // Data for the chart
+    var pieChart = new Chart(pieChar, {
+        type: "pie",
+        data: {
+            labels: ["Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6"], // Labels for 6 months
+            datasets: [{
+                label: "Doanh số trong 6 tháng (triệu VND)",
+                data: [120, 150, 180, 200, 160, 220], // Sample data
+                backgroundColor: [
+                    "#FF6384", // Color for Tháng 1
+                    "#36A2EB", // Color for Tháng 2
+                    "#FFCE56", // Color for Tháng 3
+                    "#4BC0C0", // Color for Tháng 4
+                    "#9966FF", // Color for Tháng 5
+                    "#FF9F40"  // Color for Tháng 6
+                ],
+                hoverBackgroundColor: [
+                    "#FF6384CC",
+                    "#36A2EBCC",
+                    "#FFCE56CC",
+                    "#4BC0C0CC",
+                    "#9966FFCC",
+                    "#FF9F40CC"
+                ]
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top', // Vị trí của legend
+                    labels: {
+                        font: {
+                            size: 16 // Font size của legend
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function (context) {
+                            const label = context.label || ''; // Lấy tên label
+                            const value = context.raw || 0;   // Lấy giá trị dữ liệu
+                            return `${label}: ${value} triệu VND`; // Nội dung tooltip
+                        }
+                    }
+                }
+            }
+        }
+
+    });
     // Line chart
     var ctxLine = document.getElementById("lineChartDemo").getContext("2d");
     var lineChart = new Chart(ctxLine, {
@@ -262,7 +324,7 @@
             labels: ["Jan", "Feb", "Mar", "Apr", "Mat", "Jun"],
             datasets: [{
                 label: "Số lượng đầu vào",
-                data: [90, 45, 50, 80, 60, 70],
+                data: [90, 75, 50, 80, 60, 70],
                 borderColor: "blue",
                 backgroundColor: "rgba(0, 0, 255, 0.1)",
                 fill: true

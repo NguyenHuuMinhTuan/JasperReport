@@ -1,30 +1,42 @@
 package authen
 
+import my.tester.app.AccountService
 import my.tester.app.AuthenticationService
 
 
 class AuthenticationController {
     AuthenticationService authenticationService
+    AccountService accountService
 
     def login() {
-//
-//        log.info("Đã gọi tới login")
-//        render(view: "login")
-   if (authenticationService.isAuthenticated()) {
-            redirect(controller: "account", action: "index")
-       }
+        if (authenticationService.isAuthenticated()) {
+            redirect(uri: "/")
+        }
     }
 
     def registration() {
-        redirect(controller: "authentication", action: "registration")
+
+    }
+    def save() {
+        def response = accountService.save(params);
+        if (response.isSuccess) {
+            flash.message = g.message(code: "Saved");
+            redirect(controller: "account", action: "index");
+
+        } else {
+            response.getErrors().each { err -> print(err) }
+            flash.message = g.message(code: "Unable.to.save");
+            redirect(controller: "account", action: "create");
+        }
     }
 
     def doLogin() {
         if (authenticationService.doLogin(params.username, params.password)) {
-            redirect(controller: "account", action: "index")
+            session.username = params.username;
+            redirect(uri: "/")
         } else {
-            flash.message ="Username and Password unavailable";
-            render(view:"login")
+            flash.error = "Username and Password unavailable";
+            render(view: "login")
         }
 
     }

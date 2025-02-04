@@ -1,12 +1,15 @@
 package my.tester.app
 
+import com.lowagie.text.Cell
 import com.trianh.Account
-
+import jdk.internal.joptsimple.internal.Row
 import net.sf.jasperreports.engine.JasperCompileManager
 import net.sf.jasperreports.engine.JasperExportManager
 import net.sf.jasperreports.engine.JasperFillManager
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource
-
+import org.apache.poi.ss.usermodel.Sheet
+import org.apache.poi.ss.usermodel.Workbook
+import org.apache.poi.xssf.usermodel.XSSFWorkbook
 
 
 class AccountController {
@@ -138,8 +141,39 @@ class AccountController {
             flash.message = g.message(code: "Unable.to.save");
             redirect(controller: "account", action: "create");
         }
-
-
     }
+    def exportUsers() {
+        // Tạo workbook (file Excel)
+        Workbook workbook = new XSSFWorkbook()
+        Sheet sheet = workbook.createSheet("Danh sách người dùng")
+
+        // Tạo tiêu đề cho Excel
+        Row headerRow = sheet.createRow(0)
+        def headers = ["ID", "Tên người dùng", "Mật khẩu", "Email"]
+        headers.eachWithIndex { header, index ->
+            Cell cell = headerRow.createCell(index)
+            cell.setCellValue(header)
+        }
+
+        // Lấy danh sách user từ database (thay thế bằng model thực tế)
+        def users = Account.list() // Lấy tất cả người dùng từ DB
+
+        // Thêm dữ liệu vào Excel
+        users.eachWithIndex { account, rowIndex ->
+            Row row = sheet.createRow(rowIndex + 1)
+            row.createCell(0).setCellValue(account.id)
+            row.createCell(2).setCellValue(account.username)
+            row.createCell(3).setCellValue(account.password)
+            row.createCell(4).setCellValue(account.email)
+
+        }
+
+        // Xuất file Excel
+        response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+        response.setHeader("Content-Disposition", "attachment; filename=users.xlsx")
+        workbook.write(response.outputStream)
+        workbook.close()
+    }
+
 
 }
