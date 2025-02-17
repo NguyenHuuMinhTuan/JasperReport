@@ -10,16 +10,14 @@ class AuthenticationController {
 
     def login() {
         if (authenticationService.isAuthenticated()) {
-<<<<<<< HEAD
             redirect(uri: "/")
-=======
             redirect(controller: "account", action: "index")
->>>>>>> 1a8b7c4a0b96b8cc8bb37e0b36fa92e4b32c269e
+
         }
     }
 
     def registration() {
-<<<<<<< HEAD
+
 
     }
     def save() {
@@ -33,18 +31,17 @@ class AuthenticationController {
             flash.message = g.message(code: "Unable.to.save");
             redirect(controller: "account", action: "create");
         }
-=======
->>>>>>> 1a8b7c4a0b96b8cc8bb37e0b36fa92e4b32c269e
+
     }
 
     def doLogin() {
         if (authenticationService.doLogin(params.username, params.password)) {
             session.username = params.username;
-<<<<<<< HEAD
+
             redirect(uri: "/")
-=======
+
             redirect(controller: "account", action: "index")
->>>>>>> 1a8b7c4a0b96b8cc8bb37e0b36fa92e4b32c269e
+
         } else {
             flash.error = "Username and Password unavailable";
             render(view: "login")

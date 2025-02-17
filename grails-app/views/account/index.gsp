@@ -1,10 +1,11 @@
 <meta name="layout" content="main"/>
 
 <div class="card">
+
     <div class="card-header d-flex">
-<<<<<<< HEAD
-        <g:link action="create" controller="account" class="ml-auto">
-            <button class="btn btn-success ml-auto">
+        <h1>Trang quản lý tài khoản</h1>
+        <g:link action="create" controller="account" class="btn btn-success ml-auto">
+            <button class="btn btn-success">
                 <i class="fas fa-plus"></i>
                 Add Account</button>
         </g:link>
@@ -12,12 +13,6 @@
         <button id="exportExcelButton" class="btn btn-success ml-2">
             <i class="fas fa-upload"></i>
             Xuất Excel</button>
-=======
-        <p>Trang quản lý tài khoản</p>
-        <g:link action="create" controller="account" class="ml-auto">
-            <button onclick="linkCreate" class="btn btn-success ml-auto">Add Account</button>
-        </g:link>
->>>>>>> 1a8b7c4a0b96b8cc8bb37e0b36fa92e4b32c269e
 
         <g:link controller="account" action="print" class="btn btn-success ml-2">
             <i class="fas fa-print"></i>

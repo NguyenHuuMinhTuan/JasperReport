@@ -138,11 +138,8 @@ class AccountController {
             redirect(controller: "account", action: "create");
         }
     }
-    def linkCreate(){
-        redirect(controller: "account" ,action: "create")
-    }
-    def linkCreate(){
-        redirect(controller: "account" ,action: "create")
+    def linkCreate() {
+        redirect(controller: "account", action: "create")
     }
 
 
